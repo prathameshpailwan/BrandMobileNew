@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <form #accessoryForm="ngForm" *ngIf="true">
+        <div class="card">
+            <div class="card-header p-2">
+                <div class="row">
+                    <div class="col-sm-5 pt-1">
+                        <h5>Accerssories</h5>
+                    </div>
+                    <div class="col-sm-7">
+                        <button class="btn btn-primary btn-sm px-2 py-1 mx-1 pull-right" (click)="addAccessory()">
+                                   Add Accessory <i class="fa fa-plus"></i>
+                                </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-2 mx-1">
+                <div class="row">
+                    <div class="col-sm-12" >
+                        <div class="table-responsive table-padding">
+                            <table class="table table-hover table-striped table-sm text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Accerssories Name</th>
+                                        <th>Price</th>
+                                        <th>Quantity</th>
+                                        <th>CreatedOn</th>
+                                        <th >Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr
+                                        *ngFor="let data of AccessoryData  ">
+                                        <td>{{data.Name}}</td>
+                                        <td>{{data.BasePrice}}</td>
+                                        <td>{{data.Quantity}}</td>
+                                        <td>{{data.CreatedOn | date}}</td>
+                                        <td>delete</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+        </div>
+    </form>
+   
+</div>
+

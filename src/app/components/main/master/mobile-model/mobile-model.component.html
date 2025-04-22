@@ -1,0 +1,104 @@
+<div class="container-fluid">
+    <form #accessoryForm="ngForm" *ngIf="true">
+        <div class="card">
+            <div class="card-header p-2">
+                <div class="row">
+                    <div class="col-sm-5 pt-1">
+                        <h6>Mobile Model</h6>
+                    </div>
+                    <div class="col-sm-7">
+                        <button class="btn btn-primary btn-sm px-2 py-1 mx-1 float-end" (click)="addType(CreateType)">
+                            Add Model <i class="fa fa-plus"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-2 mx-1">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="table-responsive table-padding">
+                            <table class="table table-hover table-striped table-sm text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Mobile Model</th>
+                                        <th>CreatedOn</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let data of MobileModelList ">
+                                        <td class="text-info">{{data.Type}}</td>
+                                        <td>{{data.CreateOn | date}}</td>
+                                        <td>delete</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<ng-template #CreateType let-modal>
+    <form #scopeOfWork="ngForm">
+        <div class="modal-header">
+            <div class="col-sm-5">
+                <h6>Add Type </h6>
+            </div>
+            <div class="col-sm-7">
+                <button class="btn btn-close float-end" (click)="onclose()"></button>
+            </div>
+
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-lg-3 mb-2">
+                    <label for="">Model<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Add New Model" name="model" #model="ngModel"
+                        [(ngModel)]="MobileModel['Model']" required>
+                </div>
+                <div class="col-lg-3 mb-2">
+                    <label for="">RAM<span class="text-danger">*</span></label>
+                    <ng-select placeholder="Enter RAM" name="ram" #ram="ngModel" [(ngModel)]="MobileModel['Type']"
+                        required>
+                        <ng-option *ngFor="let rm of RamMasters" [value]="rm.RamId">
+                            {{rm.Ram}}
+                        </ng-option>
+                    </ng-select>
+                </div>
+                <div class="col-lg-3 mb-2">
+                    <label for="">Rom<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Add New Mobile Type" name="type" #type="ngModel"
+                        [(ngModel)]="MobileModel['Type']" required>
+                </div>
+                <div class="col-lg-3 mb-2">
+                    <label for="">Colour<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Add New Mobile Type" name="type" #type="ngModel"
+                        [(ngModel)]="MobileModel['Type']" required>
+                </div>
+                <div class="col-lg-3 mb-2">
+                    <label for="">Dealer Price<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Add New Mobile Type" name="type" #type="ngModel"
+                        [(ngModel)]="MobileModel['Type']" required>
+                </div>
+                <div class="col-lg-3 mb-2">
+                    <label for="">MOP Price<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Add New Mobile Type" name="type" #type="ngModel"
+                        [(ngModel)]="MobileModel['Type']" required>
+                </div>
+                <div class="col-lg-3 mb-2">
+                    <label for="">Brand Price<span class="text-danger">*</span></label>
+                    <input class="form-control" placeholder="Add New Mobile Type" name="type" #type="ngModel"
+                        [(ngModel)]="MobileModel['Type']" required>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary btn-sm mx-1 pull-right px-2 py-1" (click)="AddType()">Add
+            </button>
+        </div>
+
+
+    </form>
+</ng-template>

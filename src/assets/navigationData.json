@@ -1,0 +1,42 @@
+{
+    "MenuData": [
+
+        {
+            "title": "Mobile",
+            "icon": "home",
+            "type": "sub",
+            "level": "L2,L3,L1",
+            "active": false
+        },
+      {
+        "title": "master",
+        "icon": "home",
+        "type": "sub",
+        "level": "L2,L3,L1",
+        "active": false,
+        "children": [
+          {
+            "path": "mobileType",
+            "title": "MobileType",
+            "type": "link"
+          },
+          {
+            "path": "colour",
+            "title": "Colour",
+            "type": "link"
+          },
+          {
+            "path": "model",
+            "title": "Model",
+            "type": "link"
+          },
+          {
+            "path": "company",
+            "title": "Company",
+            "type": "link"
+          }
+        ]
+      }
+     
+    ]
+  }
