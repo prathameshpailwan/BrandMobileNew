@@ -26,7 +26,7 @@ export class MobileService {
       RomId : Model.RomId || null, 
       Input : Model.Input 
     }
-    let url = environment.BrandMobile + 'api/MobileController/AddTypeCompanyColour'
+    let url =  `${environment.BrandMobile}/api/MobileController/AddTypeCompanyColour`;
 
     return this.http.post(url , data).pipe(map(x => x), take(1));
   }
