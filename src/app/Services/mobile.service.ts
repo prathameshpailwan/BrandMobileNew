@@ -52,7 +52,7 @@ export class MobileService {
       ModelId : Model.ModelId || null, 
       Input : Model.Input 
     }
-    let url = environment.BrandMobile + 'api/MobileController/MobileModelTransaction'
+    let url = `${environment.BrandMobile}/api/MobileController/MobileModelTransaction`
     return this.http.post(url , data).pipe(map(x => x), take(1));
   }
 }

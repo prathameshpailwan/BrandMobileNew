@@ -12,7 +12,7 @@ export class AccessoryService {
 
   GetAccessory(){
 debugger
-    let url = environment.BrandMobile + 'api/MobileController/GetAccesories'
+    let url = `${environment.BrandMobile}/api/MobileController/GetAccesories`
     return this.http.get(url).pipe(map(x => x));
   }
 }
