@@ -32,7 +32,7 @@ export class MobileService {
   }
 
   GetMobileMasterData(){
-    let url = environment.BrandMobile + 'api/MobileController/GetMobileMasterData'
+    let url = `${environment.BrandMobile}api/MobileController/GetMobileMasterData`;
     return this.http.get(url).pipe(map(x => x));
   }
 
