@@ -1,5 +1,5 @@
 export const environment={
 production: false,
     //BrandMobile : "https://localhost:7145/"
-    BrandMobile : "https://akbrandmobileapi-11.onrender.com"
+    BrandMobile : "brandmobileapi-eqcqb7c4dkf6dka8.canadaeast-01.azurewebsites.net"
 }
